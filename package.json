@@ -1,0 +1,23 @@
+{
+  "name": "miru-node-ci-cd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc -p tsconfig.build.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prectal123/node-ci-cd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prectal123/node-ci-cd/issues"
+  },
+  "homepage": "https://github.com/prectal123/node-ci-cd#readme",
+  "description": "",
+  "devDependencies": {
+    "typescript": "^4.9.4"
+  }
+}
