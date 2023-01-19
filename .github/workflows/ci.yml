@@ -22,7 +22,8 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-    
+
+  cii:
     name: Build_windows-latest
     runs-on: windows-latest
 
@@ -37,5 +38,3 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-
-      
