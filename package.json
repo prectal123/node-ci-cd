@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
     "eslintautofix": "npm run lint -- --fix",
-    "pret": "prettier --check ."
+    "prettywrite": "prettier --write .",
+    "prettycheck": "prettier --check ."
   },
   "repository": {
     "type": "git",

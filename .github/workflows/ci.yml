@@ -53,9 +53,11 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      # - name: esLint Auto Fix
-      #   run: npx eslintautofix
-      # - name: esLint
-      #   run: npm run lint
-      - name: prettier
-        run: npm run pret
+      - name: esLint Auto Fix
+        run: npm run eslintautofix
+      - name: esLint
+        run: npm run lint
+      - name: prettier - write
+        run: npm run prettywrite
+      - name: prettier - check
+        run: npm run prettycheck
