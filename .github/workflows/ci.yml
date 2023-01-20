@@ -54,7 +54,7 @@ jobs:
       - name: Build
         run: npm run build
       - name: esLint Auto Fix
-        run: npx eslintAutoFix
+        run: npx eslintautofix
       - name: esLint
         run: npm run lint
       - name: prettier
