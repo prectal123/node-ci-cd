@@ -58,4 +58,4 @@ jobs:
       # - name: esLint
       #   run: npm run lint
       - name: prettier
-        run: npx run pret
+        run: npm run pret
