@@ -8,7 +8,7 @@ on:
 
 jobs:
   ci:
-    name: Build_ubuntu-latest
+    name: Build_ubuntu-latest_14
     runs-on: ubuntu-latest
 
     steps:
@@ -22,9 +22,38 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-
   cii:
-    name: Build_windows-latest
+    name: Build_ubuntu-latest_16
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: npm
+      - name: Install npm dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+  ciii:
+    name: Build_ubuntu-latest_18
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: npm
+      - name: Install npm dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+  ciiii:
+    name: Build_windows-latest_14
     runs-on: windows-latest
 
     steps:
@@ -38,8 +67,41 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-  ciii:
-    name: Build-ubuntu-latest-node-v16-and eslint
+
+  ciiiii:
+    name: Build_windows-latest_16
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: npm
+      - name: Install npm dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+
+  ciiiiii:
+    name: Build_windows-latest_18
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: npm
+      - name: Install npm dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+
+  ci1:
+    name: Build-ubuntu-latest_eslint_prettier
     runs-on: ubuntu-latest
 
     steps:

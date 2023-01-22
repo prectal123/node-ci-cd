@@ -20,6 +20,12 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: Compare Package and Tag Version
+        run: echo "REALEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+      - name: Test
+        run: |
+          echo $REALEASE_VERSION
+          echo ${{ env.RELEASE_VERSION }}
       - name: Publish
         run: npm publish --access public
         env:
