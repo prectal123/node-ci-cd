@@ -25,13 +25,13 @@ jobs:
       - name: Test
         run: |
           export VERSION=$(node -p "require('./package.json').version")
-          echo $VERSION
-          echo $REALEASE_VERSION
-          echo ${$RELEASE_VERSION:1:5} >> $RELEASE_VERSION_PARC
-          export $RELEASE_VERSION_PARC
+          echo "PACKAGE_VERSION=$VERSION" >> $GITHUB_ENV
+          echo "TAG_VERSION=${$REALEASE_VERSION:1:5}" >> $GITHUB_ENV
       - name: Real Compare
-        if: $VERSION != $RELEASE_VERSION_PARC
-        run: exit 1
+        if: ${{ env.PACKAGE_VERSION != env.TAG_VERSION }}
+        run: |
+          echo "ERROR: the package version and tag version is different"
+          exit 1
       - name: Publish
         run: npm publish --access public
         env:
