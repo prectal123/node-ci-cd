@@ -24,6 +24,8 @@ jobs:
         run: echo "REALEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
       - name: Test
         run: |
+          export VERSION=$(node -p "require('./package.json').version")
+          echo $VERSION
           echo $REALEASE_VERSION
           echo ${{ env.RELEASE_VERSION }}
       - name: Publish
