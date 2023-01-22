@@ -28,8 +28,10 @@ jobs:
           echo $VERSION
           echo $REALEASE_VERSION
           echo ${$RELEASE_VERSION:1:5} >> $RELEASE_VERSION_PARC
-          ${{ if eq($VERSION, $RELEASE_VERSION_PARC) }}:
-            exit 1
+          export $RELEASE_VERSION_PARC
+      - name: Real Compare
+        if: $VERSION != $RELEASE_VERSION_PARC
+        run: exit 1
       - name: Publish
         run: npm publish --access public
         env:
