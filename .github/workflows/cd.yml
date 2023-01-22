@@ -25,8 +25,8 @@ jobs:
       - name: Test
         run: |
           export VERSION=$(node -p "require('./package.json').version")
-          echo "PACKAGE_VERSION=$VERSION" >> $GITHUB_ENV
-          echo "TAG_VERSION=${$REALEASE_VERSION:1:5}" >> $GITHUB_ENV
+          echo "PACKAGE_VERSION=v$VERSION" >> $GITHUB_ENV
+          echo "TAG_VERSION=$REALEASE_VERSION" >> $GITHUB_ENV
       - name: Real Compare
         if: ${{ env.PACKAGE_VERSION != env.TAG_VERSION }}
         run: |
